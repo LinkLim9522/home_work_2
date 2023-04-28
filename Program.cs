@@ -3,11 +3,12 @@
 System.Console.WriteLine($"{msg}");
 return Convert.ToInt32(Console.ReadLine());
 }
-int number = Prompt("Введите трехзначное число");
-if (number >=100 && number <1000)
+int number = Prompt("Введите день недели");
+string dn = "Это не день недели";
+string check(int number)
 {
-int mid = number / 10 % 10;
-System.Console.WriteLine($"Вторая цифра числа {number} является {mid}");
+if (number >= 6 && number <= 7) dn = "Это выходной";
+if (number >= 1 && number <= 5) dn = "Это будний день";
+return dn;
 }
-else
-System.Console.WriteLine("Это число не трехзначное");
+System.Console.WriteLine(check(number));
